@@ -7,10 +7,9 @@ Both options have students build an AI agent with Codex that shops laptop stores
 
 The quick version: **brief, shop, audit.** Students write a customer brief, build a small shopper agent with four Codex prompts, and send it through two offline practice stores. The agent reads each page, reacts as the customer, decides where to click, and answers exit questions at the end. Output is a side-by-side journey page that shows the customer's mood, frustration and any blocked actions at each step.
 
-- Runs only on the two practice stores, so there's no live website risk
+- Runs only on the practice stores, so there's no live website risk
 - No browser install: it reads page text instead of taking screenshots
-- Best for: non-coders, short time slots, a guaranteed working demo
-
+- 
 ## 2: Student Kit (advanced)
 
 The full research version. Students act as Dell business analysts and build an agent that shops **dell.com live** against a competitor (Samsung or Apple) using a real browser. The agent works in a loop: **Observation** (screenshot), **Decision** (reacts as the persona), **Action selection** (one click or scroll), **Safety and execution** (checks the rules, then acts). After the run, **Analysis and report** produces a scored analyst report covering four funnel stages: discovery, product page, price transparency and purchase intent.
