@@ -9,7 +9,7 @@ The quick version: **brief, shop, audit.** Students write a customer brief, buil
 
 - Runs only on the practice stores, so there's no live website risk
 - No browser install: it reads page text instead of taking screenshots
-- 
+
 ## 2: Student Kit (advanced)
 
 The full research version. Students act as Dell business analysts and build an agent that shops **dell.com live** against a competitor (Samsung or Apple) using a real browser. The agent works in a loop: **Observation** (screenshot), **Decision** (reacts as the persona), **Action selection** (one click or scroll), **Safety and execution** (checks the rules, then acts). After the run, **Analysis and report** produces a scored analyst report covering four funnel stages: discovery, product page, price transparency and purchase intent.
