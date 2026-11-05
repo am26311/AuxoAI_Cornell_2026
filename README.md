@@ -5,7 +5,7 @@ Both options have students build an AI agent with Codex that shops laptop stores
 
 ## 1: AI Mystery Shopper (simple)
 
-The quick version: **brief, shop, audit.** Students write a customer brief, build a small shopper agent with four Codex prompts, and send it through two offline practice stores. The agent reads each page, reacts as the customer, decides where to click, and answers exit questions at the end. Output is a side-by-side journey page that shows the customer's mood, frustration and any blocked actions at each step.
+The quick version: **brief, shop, audit.** Students write a customer brief, build a small shopper agent with Codex prompts, and send it through an offline practice stores. The agent reads each page, chooses based on criteria set and answers exit questions at the end.
 
 - Runs only on the practice stores, so there's no live website risk
 - No browser install: it reads page text instead of taking screenshots
