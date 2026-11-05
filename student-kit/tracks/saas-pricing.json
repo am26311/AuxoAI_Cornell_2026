@@ -1,0 +1,19 @@
+{
+  "id": "saas-pricing",
+  "title": "Business software study: project tool pricing pages",
+  "persona": "Taylor leads a 5-person analytics team in New York and is choosing a project management tool. Budget: about $15 per user per month (about $75 per month for the team), ideally billed monthly. Must-haves: dashboards for project status, a Google Sheets or Excel integration, and free guest access for 2 client contacts. Taylor dislikes annual-only pricing, features hidden behind 'contact sales', and unclear trial or cancellation terms. Do not invent prices, limits, or terms. Taylor will not sign up, start a trial, log in, or give any contact details during this study.",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "model_validation": "candidate; requires paid pilot and human review",
+  "sites": [
+    {"id": "monday", "name": "monday.com", "start_url": "https://monday.com/", "allowed_hosts": ["monday.com", "www.monday.com"], "local_path": "/store-a/index.html"},
+    {"id": "clickup", "name": "ClickUp", "start_url": "https://clickup.com/", "allowed_hosts": ["clickup.com", "www.clickup.com"], "local_path": "/store-b/index.html"},
+    {"id": "airtable", "name": "Airtable (spare)", "start_url": "https://www.airtable.com/", "allowed_hosts": ["www.airtable.com", "airtable.com"], "local_path": "/store-b/index.html"}
+  ],
+  "default_sites": ["monday", "clickup"],
+  "tasks": [
+    {"id": "find", "goal": "Find the plan on this site that best fits your team size, must-haves, and budget. Read the plan name and its displayed per-user price, and note whether that price is billed monthly or annually. Do not sign up, start a trial, or contact sales."},
+    {"id": "evaluate", "goal": "For the selected plan, check the limits that matter to you (seats, dashboards, integrations, guest access, storage) and the monthly versus annual price for 5 users. State what is missing or only available on a higher plan rather than guessing."},
+    {"id": "decide", "goal": "Find the free trial length, whether a credit card is needed, and the cancellation or refund terms, using only public pages. Explain whether you would continue with this tool or leave, and what remains unknown. This is a synthetic preference, not a real purchase."}
+  ],
+  "limits": {"max_steps": 12, "site_seconds": 600, "max_failures": 3, "max_api_calls": 200, "max_total_tokens": 500000, "api_timeout_seconds": 30, "api_retries": 2}
+}

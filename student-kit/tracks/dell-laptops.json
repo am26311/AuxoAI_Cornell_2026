@@ -1,0 +1,89 @@
+{
+  "id": "dell-laptops",
+  "title": "Dell laptop study: dell.com vs a competitor",
+  "persona": "Jordan is starting a first job in New York (ZIP 10001) and needs a NEW laptop for spreadsheets, video calls, and everyday work. The budget is $1,500 total, including tax and delivery. Jordan has limited technical knowledge, dislikes unclear costs and return conditions, and needs plain-language information. Do not invent fees or performance claims. Mark total affordability unconfirmed if tax or delivery cannot be established before checkout. Jordan can abandon after repeated confusion.",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "model_validation": "candidate; requires paid pilot and human review",
+  "sites": [
+    {
+      "id": "dell",
+      "name": "Dell",
+      "start_url": "https://www.dell.com/en-us",
+      "allowed_hosts": [
+        "www.dell.com",
+        "dell.com"
+      ],
+      "local_path": "/store-a/index.html"
+    },
+    {
+      "id": "samsung",
+      "name": "Samsung",
+      "start_url": "https://www.samsung.com/us/",
+      "allowed_hosts": [
+        "www.samsung.com",
+        "samsung.com"
+      ],
+      "local_path": "/store-b/index.html",
+      "allowed_paths": [
+        "/us/computing/galaxy-books/[a-z0-9-]+/buy(?:/[a-z0-9-]+)*/?"
+      ],
+      "allowed_asset_paths": [
+        "/public/buy-spa/_next/static/[A-Za-z0-9_./\\[\\]-]+"
+      ],
+      "allowed_read_posts": [
+        "sribsrch.ecom.samsung.com /estoresearch-api/v1/scom/us/pf_search"
+      ]
+    },
+    {
+      "id": "apple",
+      "name": "Apple",
+      "start_url": "https://www.apple.com/",
+      "allowed_hosts": [
+        "www.apple.com",
+        "apple.com"
+      ],
+      "local_path": "/store-b/index.html",
+      "allowed_paths": [
+        "/shop/buy-mac(?:/[a-z0-9-]+)*/?",
+        "/us/shop/buy-mac(?:/[a-z0-9-]+)*/?"
+      ]
+    },
+    {
+      "id": "lenovo",
+      "name": "Lenovo (spare)",
+      "start_url": "https://www.lenovo.com/us/en/",
+      "allowed_hosts": [
+        "www.lenovo.com",
+        "lenovo.com"
+      ],
+      "local_path": "/store-b/index.html"
+    }
+  ],
+  "default_sites": [
+    "dell",
+    "samsung"
+  ],
+  "tasks": [
+    {
+      "id": "find",
+      "goal": "Find one NEW laptop sold directly by this brand that fits your stated needs and budget. Read its exact model name and displayed price. Report total affordability as unconfirmed if taxes or delivery are unknown. Refurbished, outlet, or open-box listings do not count. Do not add to cart, customize-and-buy, or buy."
+    },
+    {
+      "id": "evaluate",
+      "goal": "Using the selected laptop, check its key specifications for your needs (for example memory, storage, processor, screen, battery), its displayed price, and any availability or delivery information visible without checkout. State what is missing rather than guessing."
+    },
+    {
+      "id": "decide",
+      "goal": "Find the delivery terms, return window, any restocking or return fee, and the warranty. Explain whether you would continue with this laptop or leave the site, and what remains unknown. This is a synthetic preference, not a real purchase."
+    }
+  ],
+  "limits": {
+    "max_steps": 12,
+    "site_seconds": 600,
+    "max_failures": 3,
+    "max_api_calls": 200,
+    "max_total_tokens": 500000,
+    "api_timeout_seconds": 30,
+    "api_retries": 2
+  }
+}
