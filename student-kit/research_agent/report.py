@@ -17,6 +17,19 @@ def atomic_json(path, data):
     tmp.replace(path)
 
 
+PRACTICE_STORE_NAMES = {'store-a': 'Northwind Computers', 'store-b': 'Summit Laptops'}
+
+
+def site_label(run, site):
+    """Live runs use the site's name. Practice stores show their own made-up name, marked as fictional,
+    so a practice result never reads as a brand result."""
+    if run['mode'] == 'live':
+        return site['name']
+    folder = site['local_path'].split('/')[1]
+    name = PRACTICE_STORE_NAMES.get(folder)
+    return f'{name} (fictional store)' if name else 'Fictional ' + folder
+
+
 def run_labels(run):
     """The banner and title the replay and the findings sheet share."""
     mode = 'SCRIPTED BROWSER FIXTURE — NO AI' if run['backend'] == 'scripted_fixture' else 'OPERATOR-GUIDED BROWSER SESSION — NO API MODEL' if run['backend'] == 'operator_guided' else 'AI SYNTHETIC SESSION — HUMAN REVIEW REQUIRED'
@@ -35,13 +48,13 @@ def render(run, directory, embed=False):
                  f"Run: {run['id']} | Status: {run['status']}", '',
                  '| Site | Task | Outcome | Evidence review |', '|---|---|---|---|']
     for site in run['sites']:
-        label = site['name'] if run['mode'] == 'live' else 'Fictional ' + site['local_path'].split('/')[1]
+        label = site_label(run, site)
         for task in site['tasks']:
             worksheet.append(f"| {label} | {task['id']} | {task['outcome']} | Pending human review |")
     worksheet += ['', '## Scorecard: the customer\'s answers by funnel stage', '',
                   'The customer answers four questions after each site. Read them as Dell\'s analyst: where in the funnel would we lose this customer?', '']
     for site in run['sites']:
-        label = site['name'] if run['mode'] == 'live' else 'Fictional ' + site['local_path'].split('/')[1]
+        label = site_label(run, site)
         srows = scorecard_rows(site.get('answers'))
         worksheet += [f'### {label}', '', '| Funnel stage | Customer\'s answer | Why Dell cares |', '|---|---|---|']
         worksheet += [f"| {a} | {c} | {d} |" for a, b, c, d in srows] + ['']

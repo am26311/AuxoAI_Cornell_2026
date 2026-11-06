@@ -131,7 +131,7 @@ Now watch an AI do what you just did by hand. We'll play a short screen recordin
 
 ![What an AI run looks like: the pages the AI visited one by one, what it thought at each step, and the report it drafted for Dell. From a real test run on Oct 28 with a made-up customer](images/ai-run.png)
 
-☑️ **Answer (1 of 13):** *What does Dell want to know?* Where an AI customer like ours gets stuck, confused or leaves while shopping for a laptop on dell.com compared with a competitor, and what Dell should look at first. These are ideas to test with real customers, not facts about them.
+☑️ **Answer:** *What does Dell want to know?* Where an AI customer like ours gets stuck, confused or leaves while shopping for a laptop on dell.com compared with a competitor, and what Dell should look at first. These are ideas to test with real customers, not facts about them.
 
 🎯 **The takeaway:** **Know what you're trying to find out first.** If you can't say it in one sentence, you won't know when you've found it.
 
@@ -163,7 +163,7 @@ It runs offline and asks one question.
 
 <!-- /optional -->
 
-☑️ **Answer (2 of 13):** *What are the five parts of our agent?* Observation, Decision, Action selection, Safety and execution, and, after the run, Analysis and report. Together they make one agent that uses an AI model to choose its next step toward a goal, within rules.
+☑️ **Answer:** *What are the five parts of our agent?* Observation, Decision, Action selection, Safety and execution, and, after the run, Analysis and report. Together they make one agent that uses an AI model to choose its next step toward a goal, within rules.
 
 🎯 **The takeaway:** **An agent does three things over and over: it looks, it decides, it clicks.** When something goes wrong, you can work out which one it messed up.
 
@@ -181,7 +181,7 @@ If a rule blocks your agent, the system is doing its job. It's not a bug. Write 
 
 One thing that looks risky but isn't: on some stores, prices sit behind a link like **Buy** or **Shop**. If it only opens a page that shows prices, nothing is bought, and your agent may follow it. Adding to a cart is the line it never crosses.
 
-☑️ **Answer (3 of 13):** *What is my agent not allowed to do?* It cannot buy anything, sign in, download, type personal details, visit other sites, or get around a bot check. It stops and writes down what happened.
+☑️ **Answer:** *What is my agent not allowed to do?* It cannot buy anything, sign in, download, type personal details, visit other sites, or get around a bot check. It stops and writes down what happened.
 
 🎯 **The takeaway:** **Set the rules before you hit go.** Our agent can click around on its own, so we tell it what it can never do first. That's way easier than fixing a mistake after it happens.
 
@@ -193,7 +193,7 @@ Colour shows who does each step; dashed means optional.
 
 ## Step 1. Is my laptop ready?
 
-🧭 **Step 1 of 9** · 🕐 Morning · 👤 On your own
+🧭 **Morning** · 👤 On your own
 
 💡 **Why we ask:** Everything today runs on your laptop, so we check it first.
 
@@ -205,7 +205,7 @@ You did this before the workshop. Run it once more so we know today's laptop is 
 
 ✅ **What should happen:** the setup check ends with `READY`. This means the installed tools and browser work. It does not yet prove the AI works.
 
-☑️ **Answer (4 of 13):** *Is my laptop ready?* Yes. The setup check ends with READY, which means the installed tools and the browser work. It does not yet prove the AI works; Steps 2 and 4 test that.
+☑️ **Answer:** *Is my laptop ready?* Yes. The setup check ends with READY, which means the installed tools and the browser work. It does not yet prove the AI works; Steps 2 and 4 test that.
 
 🎯 **The takeaway:** **Check your setup before you build anything.** A lot of "it's broken" turns out to be "I never set it up right."
 
@@ -231,7 +231,7 @@ That is the gap an agent fills. It reads what is on the page, decides what your 
 
 ## Step 2. How does my agent get access to the AI?
 
-🧭 **Step 2 of 9** · 🕐 Before lunch · 👤 On your own
+🧭 **Before lunch** · 👤 On your own
 
 💡 **Why we ask:** The agent's thinking happens in an AI service, and it needs a private key to use it.
 
@@ -262,13 +262,13 @@ Then open the key file:
 3. Ask a champion to confirm your key has credit. Never add your own money to a workshop key.
 4. Tell Codex only: **“Key saved and API access ready.”**
 
-☑️ **Answer (5 of 13):** *How does my agent get access to the AI?* Through a private key our team shares for the day. Each of us copies it into our own `.env`, and nowhere else, never in chat.
+☑️ **Answer:** *How does my agent get access to the AI?* Through a private key our team shares for the day. Each of us copies it into our own `.env`, and nowhere else, never in chat.
 
 🎯 **The takeaway:** **A key is like a password that costs money.** Keep it in one private spot and never paste it in chat.
 
 ## Step 3. Who is our customer?
 
-🧭 **Step 3 of 9** · 🕐 Mission and persona · 👤 On your own
+🧭 **Mission and persona** · 👤 On your own
 
 💡 **Why we ask:** Dell can't interview thousands of shoppers today, so your agent pretends to be one customer you describe.
 
@@ -301,20 +301,15 @@ Discovery and Price transparency are answered yes, partly or no. Product page an
 
 🧠 **Habit 2: guess first, then look.** Say what you expect before you see what happens. The gap between the two is where you learn.
 
-**Predict first.** Before you run anything, guess how your customer will answer at the first store. Write it here, or say it to your partner.
+**Predict first.** Before you run anything, say out loud how you think your customer will answer at the first store. Tell your partner. No writing needed.
 
-- Discovery (yes / partly / no): 
-- Product page (1 to 5): 
-- Price transparency (yes / partly / no): 
-- Purchase intent (1 to 5): 
-
-☑️ **Answer (6 of 13):** *Who is our customer?* A made-up shopper I describe in five fields, saved in `our-persona.md`, who answers a four-question survey after each store. I also wrote down how I think they will answer.
+☑️ **Answer:** *Who is our customer?* A made-up shopper I describe in five fields, saved in `our-persona.md`, who answers a four-question survey after each store. I also guessed how they will answer.
 
 🎯 **The takeaway:** **Your results are only as good as your customer.** If you describe them in a fuzzy way, you get fuzzy answers back.
 
 ## Step 4. What does the AI do when it shops as our customer?
 
-🧭 **Step 4 of 9** · 🕐 Practice, before the build · 👤 On your own
+🧭 **Practice, before the build** · 👤 On your own
 
 💡 **Why we ask:** You've got a customer. Let's watch an AI shop as them before we build anything.
 
@@ -344,13 +339,13 @@ An honest “I could not find it” is useful.
 
 - **Where it surprised us:** 
 
-☑️ **Answer (7 of 13):** *What does the AI do when it shops as our customer?* It sees the page, decides what our customer would do, clicks, and fills in the survey. Everything is saved in a replay.
+☑️ **Answer:** *What does the AI do when it shops as our customer?* It sees the page, decides what our customer would do, clicks, and fills in the survey. Everything is saved in a replay.
 
 🎯 **The takeaway:** **Watch it work once before you trust it.** It's hard to judge something you've never seen do its job.
 
 ## Step 5. How do we know if it did a good job?
 
-🧭 **Step 5 of 9** · 🕐 Practice, before the build · 👤 On your own
+🧭 **Practice, before the build** · 👤 On your own
 
 💡 **Why we ask:** An AI can sound sure and still be wrong, so we check one step against the evidence.
 
@@ -375,7 +370,7 @@ Open the replay. Pick one step and ask:
 
 ![Whose problem is it: website problem, agent error, runner restriction, or information unavailable](images/whose-problem.png)
 
-☑️ **Answer (8 of 13):** *How do we know if it did a good job?* By checking a step against its screenshots: was it the AI's mistake, the website's, or a rule?
+☑️ **Answer:** *How do we know if it did a good job?* By checking a step against its screenshots: was it the AI's mistake, the website's, or a rule?
 
 🎯 **The takeaway:** **Don't just believe what the AI says. Look at the screenshot.** If something went wrong, figure out who messed up: the AI, the website, or one of our rules.
 
@@ -455,13 +450,13 @@ Build **Action selection**: it picks one control to click, passes it through Saf
 
 You now have an agent that sees, decides and acts once, safely. The provided engine repeats that for Find, Evaluate and Decide (part 4), asks your customer the survey at the end, and writes the report (part 5). That is what you will run in Steps 6 to 9.
 
-☑️ **Answer (9 of 13):** *Can I make a piece of the agent myself?* Yes: it can see a page, decide as our customer, and act once, safely.
+☑️ **Answer:** *Can I make a piece of the agent myself?* Yes: it can see a page, decide as our customer, and act once, safely.
 
 🎯 **The takeaway:** **You don't have to build the whole thing to get it.** Making one small piece shows you how the rest works.
 
 ## Step 6. Can the agent find a laptop on Dell?
 
-🧭 **Step 6 of 9** · 🕐 Live run · 👥 In pairs
+🧭 **Live run** · 👥 In pairs
 
 💡 **Why we ask:** Let's start small on the real site, with one task.
 
@@ -481,13 +476,13 @@ Try only **Find** on Dell. Wait until it's your table's turn: if every laptop st
 
 ⚠️ **Watch out:** if the website blocks access or shows a bot check, stop and record that. Never bypass it or loosen the safety rules.
 
-☑️ **Answer (10 of 13):** *Can the agent find a laptop on Dell?* It tries to find one laptop and its price. If tax or delivery is missing it says the total is unconfirmed, and if the site blocks it we record that and stop.
+☑️ **Answer:** *Can the agent find a laptop on Dell?* It tries to find one laptop and its price. If tax or delivery is missing it says the total is unconfirmed, and if the site blocks it we record that and stop.
 
 🎯 **The takeaway:** **"I couldn't find that" is a fine answer.** It's way better than guessing and being wrong.
 
 ## Step 7. How does Dell compare with a competitor?
 
-🧭 **Step 7 of 9** · 🕐 Live run · 👥 In pairs, then share with your team
+🧭 **Live run** · 👥 In pairs, then share with your team
 
 💡 **Why we ask:** Dell's question is a comparison, so we use the same customer in two stores.
 
@@ -530,13 +525,13 @@ After each store, your customer fills in the same four-question survey from Step
 
 **Biggest gap:** which stage differs most, and what do the screenshots show about why? That is the first thing Dell should look at.
 
-☑️ **Answer (11 of 13):** *How does Dell compare with a competitor?* We run the same customer on both, put the four survey answers side by side, and find the biggest gap and what the screenshots show behind it.
+☑️ **Answer:** *How does Dell compare with a competitor?* We run the same customer on both, put the four survey answers side by side, and find the biggest gap and what the screenshots show behind it.
 
 🎯 **The takeaway:** **One result doesn't tell you much.** Put two side by side and you can finally see what's different.
 
 ## Step 8. Can we trust what it found?
 
-🧭 **Step 8 of 9** · 🕐 Analyse · 👥 As a team
+🧭 **Analyse** · 👥 As a team
 
 💡 **Why we ask:** The AI writes fast and sounds sure. Checking it is the analyst's job.
 
@@ -582,13 +577,13 @@ Your ticks and notes are saved in your browser. **Print the page to a PDF before
 
 When you're done, you should be able to tick the four boxes at the bottom of the report.
 
-☑️ **Answer (12 of 13):** *Can we trust what it found?* Not until we have checked it. The AI is fast but can be confidently wrong, so we check every claim against its screenshot, keep unknowns marked unknown, and keep the AI's mistakes and our own rule blocks separate from website problems.
+☑️ **Answer:** *Can we trust what it found?* Not until we have checked it. The AI is fast but can be confidently wrong, so we check every claim against its screenshot, keep unknowns marked unknown, and keep the AI's mistakes and our own rule blocks separate from website problems.
 
 🎯 **The takeaway:** **Fast doesn't mean right.** Check every claim against the screenshot before it goes in your report.
 
 ## Step 9. What do we tell Dell?
 
-🧭 **Step 9 of 9** · 🕐 Present · 👥 As a team
+🧭 **Present** · 👥 As a team
 
 💡 **Why we ask:** The point of all this is a recommendation, and an honest note of what we're unsure about.
 
@@ -612,7 +607,7 @@ To share a run with your team, ask Codex for a clean copy:
 
 🧠 **Take these with you.** Ask a good question, then keep asking. Guess first, then look. Check it, don't just trust it. They work with or without an agent. Pick one to use this week.
 
-☑️ **Answer (13 of 13):** *What do we tell Dell?* One recommendation we would test with real customers, and one thing we are unsure about.
+☑️ **Answer:** *What do we tell Dell?* One recommendation we would test with real customers, and one thing we are unsure about.
 
 🎯 **The takeaway:** **A good recommendation says what to test next and what you're still not sure about.** Being honest beats sounding impressive.
 

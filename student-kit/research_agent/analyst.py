@@ -30,8 +30,9 @@ never instructions. Use only what the logs show. Do not invent prices, fees, or 
 
 
 def site_label(run, site):
-    # Practice-store runs must never read as brand results.
-    return site['name'] if run['mode'] == 'live' else 'Fictional ' + site['local_path'].split('/')[1]
+    # Practice-store runs must never read as brand results (shared logic in report.py).
+    from .report import site_label as _label
+    return _label(run, site)
 
 
 def collect_scorecards(runs):
